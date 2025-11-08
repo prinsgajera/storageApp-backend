@@ -99,6 +99,9 @@ try {
           name: {
             bsonType: "string",
           },
+           size: {
+            bsonType: "int",
+          },
           extension: {
             bsonType: "string",
           },
