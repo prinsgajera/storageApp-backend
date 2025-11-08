@@ -28,6 +28,10 @@ app.use(
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
+app.get("/err", (req, res) => {
+  console.log("Error route");
+  process.exit(1);
+});
 app.use("/directory", checkAuth, directoryRoutes);
 app.use("/file", checkAuth, fileRoutes);
 app.use("/", userRoutes);
