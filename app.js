@@ -7,6 +7,9 @@ import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import checkAuth from "./middlewares/authMiddleware.js";
 import { connectDB } from "./config/db.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const mySecretKey = "ProCodrr-storageApp-123$#";
 
@@ -33,6 +36,6 @@ app.use((err, req, res, next) => {
   res.json(err);
 });
 
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log(`Server Started`);
 });

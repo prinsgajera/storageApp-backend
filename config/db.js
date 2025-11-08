@@ -3,9 +3,8 @@ import mongoose from "mongoose";
 export async function connectDB() {
   try {
     await mongoose.connect(
-      "mongodb://localhost:27017/storageApp"
+      process.env.DB_URL
     );
-
     console.log("Database connected");
   } catch (err) {
     console.log(err);

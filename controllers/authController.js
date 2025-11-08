@@ -28,6 +28,7 @@ export const loginWithGoogle = async (req, res, next) => {
   const userData = await verifyIdToken(idToken);
   const { name, email, picture, sub } = userData;
   const user = await User.findOne({ email }).select("-__v");
+
   if (user) {
     if (user.deleted) {
       return res.status(403).json({
