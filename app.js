@@ -25,6 +25,9 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 app.use("/directory", checkAuth, directoryRoutes);
 app.use("/file", checkAuth, fileRoutes);
 app.use("/", userRoutes);
